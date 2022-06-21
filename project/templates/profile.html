@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  Welcome, Tom (such a popular guy)!</br>...i mean:</br>
+  Welcome, {{ username }}!
+</h1>
+
+{% if posts|length < 1 %}
+<h4 style="text-align:center;">You have not made any posts yet</h4>
+
+{% else %}
+<table>
+    <tr>
+        <th>header stuff for table</th>
+    </tr>
+    {% for post in posts %}
+      <tr><td>post_id:{{ post.Posts.id }}</td></tr>
+      <tr><td>user_id:{{ post.Posts.user_id }}</td></tr>
+      <tr><td>username:{{ post.User.username }}</td></tr>
+      <tr><td>{{ post.Posts.post }}</td></tr>
+    <tr><td>-----</td></tr>
+    {% endfor %}
+</table>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  twitter-clone_name-TBD
+</h1>
+<h2 class="subtitle">
+  sub heading stuff goes here...idealy some sarcastic remark (maybe a pile of feathers or something)
+</h2>
+
+{% if posts|length < 1 %}
+<h4 style="text-align:center;">There are no posts yet</h4>
+
+{% else %}
+<table>
+    <tr>
+        <th>header stuff for table</th>
+    </tr>
+    {% for post in posts %}
+      <tr><td>post_id:{{ post.Posts.id }}</td></tr>
+      <tr><td>user_id:{{ post.Posts.user_id }}</td></tr>
+      <tr><td>username:{{ post.User.username }}</td></tr>
+      <tr><td>{{ post.Posts.post }}</td></tr>
+      <tr><td>-----</td></tr>
+    {% endfor %}
+</table>
+{% endif %}
+
+{% endblock %}
