@@ -88,3 +88,31 @@ def makepost_post():
 	db.session.commit()
 
 	return redirect(url_for('main.profile'))
+
+
+
+@auth.route('/editbio')
+def editbio():
+	return render_template('editbio.html', bio=current_user.biography)
+
+@auth.route('/editbio', methods=['POST'])
+def editbio_post():
+	# code to validate and add post to database goes here  --->>>> validate...length?
+	newbio = request.form.get('newbio')
+
+	# create a new post with the form data
+	#new_post = Posts(post=post, user_id=current_user.id)
+	user = User.query.filter_by(username=current_user.username).first()
+	user.biography = newbio
+	db.session.commit()
+
+	# add the new post to the database
+	#db.session.add(new_post)
+	#db.session.commit()
+
+	return redirect(url_for('main.profile'))
+
+
+
+
+

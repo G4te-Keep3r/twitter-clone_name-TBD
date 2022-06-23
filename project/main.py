@@ -41,7 +41,7 @@ def profile():
 	#User.query.get(int(user_id))
 
 
-	return render_template('profile.html', username=current_user.username, posts=posts)
+	return render_template('profile.html', username=current_user.username, posts=posts, bio=current_user.biography)
 
 
 

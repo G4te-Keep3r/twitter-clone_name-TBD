@@ -17,11 +17,9 @@
         <th>header stuff for table</th>
     </tr>
     {% for post in posts %}
-      <tr><td>post_id:{{ post.Posts.id }}</td></tr>
-      <tr><td>user_id:{{ post.Posts.user_id }}</td></tr>
-      <tr><td>username:{{ post.User.username }}</td></tr>
+      <tr><td style="border: none; text-align: end">{{ post.User.username }}</td></tr>
       <tr><td>{{ post.Posts.post }}</td></tr>
-      <tr><td>-----</td></tr>
+    <tr><td style="border: none;"><br></td></tr>
     {% endfor %}
 </table>
 {% endif %}
