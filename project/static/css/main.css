@@ -16,3 +16,9 @@ html {
 .div5 { grid-area: 5 / 1 / 6 / 2; }
 .div6 { grid-area: 6 / 1 / 7 / 2; }
 .div7 { grid-area: 1 / 2 / 11 / 3; }
+
+td {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 5px;
+}
